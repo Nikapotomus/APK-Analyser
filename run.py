@@ -1,10 +1,8 @@
-from src.FileHandler import FileHandler
+from src.Main import Main
 
 from config.Config import APKAnalyserConfig
 
 AAConfig = APKAnalyserConfig
 print AAConfig.banner
 
-
-FH = FileHandler()
-FH.Description()
+Main = Main()
