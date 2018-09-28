@@ -29,9 +29,6 @@ class FileHandler:
 
     def FindDir(self, name, path):
         for root, dirs, files in os.walk(path):
-            print "file :: {}".format(files)
-            print "dir :: {}".format(dirs)
-
             if name in dirs:
                 # print "Found Directory :: {}".format(os.path.join(root, name))
                 return os.path.join(root, name)
