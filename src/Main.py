@@ -24,6 +24,19 @@ class Main:
 
         libsDir = self.FH.FindDir("libs", self.AAConfig.OutputDir)
         if libsDir:
-            print "Found libs directory!"
+            print ("[+] Application has a libs folder for storing native libraries!")
+
+            # Array for holding full path references for each lib in artefact
+            artefactLibs = []
+
             for lib in os.listdir(libsDir):
-                print lib
+                # print("[+] {} :: {}".format(lib, os.path.join(libsDir, lib)))
+                artefactLibs.append(os.path.join(libsDir, lib))
+
+            if artefactLibs:
+                print("[+] Found {} native libraries, analysing compiler flags..".format(len(artefactLibs)))
+
+                for al in artefactLibs:
+                    print("\t[-] {}".format(al))
+            else:
+                print("[!] No native libraries used by artefact!")

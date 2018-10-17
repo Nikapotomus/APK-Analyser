@@ -12,10 +12,9 @@ class FileHandler:
     def UnzipAPK(self):
         targetAPK = "/home/nikola/Documents/python_projects/APK-Analyser/nik.zip"
         if os.path.isfile(targetAPK):
-            print("FOUND THE FILE!!")
-
-            print(self.AAConfig.RootDir)
-            print(self.AAConfig.OutputDir)
+            print("[+] Found target artefact, unzipping...")
+            # print(self.AAConfig.RootDir)
+            # print(self.AAConfig.OutputDir)
 
             zipRef = zipfile.ZipFile(targetAPK, 'r')
             zipRef.extractall(self.AAConfig.OutputDir)
